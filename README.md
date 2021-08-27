@@ -1,0 +1,2 @@
+# AttendCheckWithSlack
+Slackコマンドで打刻できる勤怠システムを作ったときのものです。docker-compose で Docker コンテナを立ち上げるとnginxサーバが立ち上がり, Slackアプリケーションとやり取りするためのAPIが使えるようになります。
