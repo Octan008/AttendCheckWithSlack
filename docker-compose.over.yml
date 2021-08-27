@@ -1,0 +1,23 @@
+version: '3'
+#dev
+services:
+  # https://hub.docker.com/r/mysql/mysql-server/ 
+nginx:
+  extends:
+    file: docker-compose.common.yml
+    service: nginx
+db:
+  extends:
+    file: docker-compose.common.yml
+    service: db
+python:
+  extends:
+    file: docker-compose.common.yml
+    service: python
+
+https-portal:
+  extends:
+    file: docker-compose.common.yml
+    service: https-portal
+volumes:
+  mtt_db:

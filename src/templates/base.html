@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>{% block title %}{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/attend.css' %}">
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {{ form.media }}
+    {% comment %} <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> {% endcomment %}
+    {% load utility %}
+    <meta charset="utf-8" />
+</head>
+
+<body>
+<header itemscope itemtype= "https://schema.org/WPHeader">
+  <div class="contents">
+    <div id="header-in">
+        <div id="site-title" itemscope itemtype= "https://schema.org/organization">
+          <a href="https://{{domain}}" >Attend</a>        
+        </div>
+        {% if Signed %}
+          <span class="menubox"></span>
+          <span class="menubox">
+            <a href="https://{{domain}}/logs">勤怠記録</a>
+          </span>
+          <span class="menubox">管理</span>
+          <span class="menubox">チーム管理</span>   
+          <span class="buttonbox"> 
+            {{team_name}}  
+          </span>
+        {% else %}
+          <span class="buttonbox"> 
+            <button type="button" id="sign-in">Sign In</button>
+            <button type="button" id="sign-up">Sign Up</button>
+          </span> 
+        {% endif %}    
+    </div>
+  </div>
+</header>
+
+{% comment %} <div class="wrapper"> {% endcomment %}
+  <div id = "torso" >
+    <div class="contents">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+{% comment %} </div> {% endcomment %}
+
+<footer>
+  <div class="contents">
+  フッター
+  </div>
+</footer>
+
+{% comment %} <div id="footer">
+  <p style="float: left;">Current Tenant:
+      {% if request.tenant %}
+      <a href="http://{{ request.tenant.get_primary_domain.domain }}:8088">{{ request.tenant.name }}</a>
+      (<code>{{ request.tenant.schema_name }}</code>, <code>{{ request.tenant.get_primary_domain.domain }}</code>).
+
+      Available Tenants:
+      {% else %}
+      None.
+      {% endif %}
+  {% for tenant in tenants_list %}
+      <a href="http://{{ tenant.get_primary_domain.domain }}:8088">{{ tenant.name }}</a> &middot;
+  {% endfor %}</p>
+  <p style="float: right;">
+    <a href="https://github.com/tomturner/django-tenants">django-tenants</a> &middot; <a href="https://django-tenants.readthedocs.org/en/latest/">Documentation</a>
+  </p>
+</div> {% endcomment %}
+</body>
+</html>

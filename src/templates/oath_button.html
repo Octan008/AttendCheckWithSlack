@@ -1,0 +1,8 @@
+{% extends 'standerd.html' %}
+{% block article %}
+<h1> サインイン </h1>
+{% comment %} <form action="https://slack.com/oauth/v2/authorize?scope=incoming-webhook&amp;client_id={{client_id}}&amp;redirect_uri={{redirect_uri}}"  method="post">
+ <input id = 'next' type="submit" value="NEXT"/>
+</form> {% endcomment %}
+<a href="https://slack.com/oauth/v2/authorize?user_scope=identity.basic,identity.email,identity.team,identity.avatar&amp;client_id={{client_id}}&amp;redirect_uri={{redirect_uri}}"><img alt=""Sign in with Slack"" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
+{% endblock %}

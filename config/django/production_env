@@ -1,0 +1,16 @@
+DEBUG=1
+SECRET_KEY=glyg(q!!@*=r58*(1c)iuxumam%rog%&&whg6y+5#jbl0$1c2u
+DATABASE_ENGINE=django_tenants.postgresql_backend
+DATABASE_DB=testapp_tenant
+DATABASE_USER=user
+DATABASE_PASSWORD=password
+DATABASE_HOST=db
+DATABASE_PORT=5432
+SERVER_DOMAIN=slackattend.work
+SERVER_IP=18.178.228.93
+
+CLIENT_ID=1038951753233.1636926558614
+CLIENT_SECRET=fb0670180b8ac03ee83599d261e8ce5c
+REDIRECT_URI=https://slackattend.work/verification_redirect
+
+REDIRECT_URI_SIGNIN=https://slackattend.work/logs/

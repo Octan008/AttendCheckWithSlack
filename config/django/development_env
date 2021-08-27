@@ -1,0 +1,16 @@
+DEBUG=1
+SECRET_KEY=glyg(q!!@*=r58*(1c)iuxumam%rog%&&whg6y+5#jbl0$1c2u
+DATABASE_ENGINE=django_tenants.postgresql_backend
+DATABASE_DB=testapp_tenant
+DATABASE_USER=user
+DATABASE_PASSWORD=password
+DATABASE_HOST=db
+DATABASE_PORT=5432
+SERVER_DOMAIN=localhost
+SERVER_IP=127.0.0.1
+
+CLIENT_ID=552340303222.1058066295509
+CLIENT_SECRET=eba062a5f6d3ed0fed6c744fccef64a0
+REDIRECT_URI=http://localhost:8080/verification_redirect
+
+REDIRECT_URI_SIGNIN=http://localhost:8080/logs/

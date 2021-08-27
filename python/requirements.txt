@@ -1,0 +1,13 @@
+Django==3
+uwsgi==2.0.17
+psycopg2
+requests
+django-tenants
+
+celery==4.3.0
+redis==3.3.0
+django_celery_beat==1.5.0     #使用しない場合はインストール不要
+django-celery-results==1.1.2  #使用しない場合はインストール不要
+
+django-bootstrap-datepicker-plus
+django-bootstrap4

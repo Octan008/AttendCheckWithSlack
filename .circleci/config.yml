@@ -1,0 +1,52 @@
+# circleCIのバージョン指定
+version: 2
+jobs:
+  build:
+    machine:
+      image: circleci/classic:edge
+    steps:
+# Djangoのテストを実行
+      - checkout
+      # - run:
+      #     name: docker-compose up
+      #     command: docker-compose up -d
+      # - run:
+      #     name: sleep for launch db to migrate at Django
+      #     command: sleep 10
+      # - run:
+      #     name: chmod
+      #     command: sudo chmod +x ./src/manage.py
+      # - run:
+      #     name: migrate
+      #     command: docker-compose run python ./manage.py migrate
+      # - run:
+      #     name: test
+      #     command: docker-compose run python ./manage.py test
+      # - run:
+      #     name: docker-compose down
+      #     command: docker-compose down
+# EC2にSSH接続し、デプロイを実行
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      # CircleCIに登録した秘密鍵を呼び出す。
+      - add_ssh_keys:
+          fingerprints:
+                - "cb:2a:7d:a0:c0:84:3c:ca:aa:2c:46:ce:9c:89:27:a9" 
+      - run: ssh ${USER_NAME_TELE_ATTEND}@${HOST_NAME_TELE_ATTEND} 'cd app/djs && git pull origin master && sudo chmod +x ./src/manage.py &&docker-compose run python ./manage.py migrate_schemas --shared'
+
+# テストが成功した場合のみ、deployを実行するようにします。 
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          # masterブランチがpushされた場合のみdeployするようにする。
+          filters:
+            branches:
+              only: master

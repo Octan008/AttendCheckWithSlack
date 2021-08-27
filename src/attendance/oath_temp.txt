@@ -1,0 +1,22 @@
+{
+    "ok":true,
+    "app_id":"A011Q1Y8PEZ",
+    "authed_user":{
+        "id":"UKTS5Q4UC"
+        },
+    "scope":"incoming-webhook",
+    "token_type":"bot",
+    "access_token":"xoxb-552340303222-1085615783185-QCCpVLswrEnoniyjDPA3AQHo",
+    "bot_user_id":"U012HJ3P15F",
+    "team":{
+        "id":"TG8A08X6J",
+        "name":"telektlist"
+        },
+    "enterprise":null,
+    "incoming_webhook":{
+        "channel":"bot_test_2",
+        "channel_id":"GV2QPG4PJ",
+        "configuration_url":"https:\/\/telektlist.slack.com\/services\/B011Y7J40CW",
+        "url":"https:\/\/hooks.slack.com\/services\/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"
+        }
+}
