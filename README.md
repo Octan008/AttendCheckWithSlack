@@ -1,4 +1,0 @@
-# DjangoSlack
-DjangoSlack
-
-+1
